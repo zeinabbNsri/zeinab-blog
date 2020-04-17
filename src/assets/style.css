@@ -21,13 +21,14 @@ table caption {
 table tr {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
-  padding: .35em;
+  padding: .35em;position: relative;z-index: 10;
 }
 
 table th,
 table td {
   padding: .625em;
   text-align: center;
+  display: block;position: relative;z-index: 10;overflow: hidden;cursor: pointer;
 }
 
 table th {
@@ -44,6 +45,46 @@ table th {
   border-radius: 10px;
   position: absolute;top:15px;
   left: 15%;
+}
+
+.detail-box{
+  padding: 10px;
+  opacity: 0;
+  position: absolute;
+  background-color: #fff;
+  -webkit-transition:opacity 0s;
+  -moz-transition:opacity 0s;
+  -ms-transition:opacity 0s;
+  -o-transition:opacity 0s;
+  transition:opacity 0s;
+  transform: translateY(-100%);
+  z-index: 0;
+}
+
+.detail-box.visible-detail{position: relative;opacity: 1;transform: translateY(0);-webkit-transition:opacity .5s;
+  -moz-transition:opacity .5s;
+  -ms-transition:opacity .5s;
+  -o-transition:opacity .5s;
+  transition:opacity .5s;
+
+}
+
+.detail-box p{
+  color: #555;
+}
+
+.detail-box div::before{
+  color: #555;
+}
+
+.star-icon{
+  color: #e6d820;font-size: 15px;
+  margin-right: 5px;
+}
+
+.text-icon{
+  color: #5c5e55;font-size: 15px;
+  margin-right: 5px;
 }
 
 @media screen and (max-width: 600px) {
